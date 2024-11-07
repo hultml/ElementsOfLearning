@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+    <!-- Background -->
+    <rect width="900" height="600" fill="white"/>
+
+    <!-- Title -->
+    <text x="450" y="40" text-anchor="middle" font-size="24" font-family="Arial" font-weight="bold">Normalization Methods in Deep Learning</text>
+
+    <!-- Legend -->
+    <g transform="translate(0,0)">
+        <text x="0" y="0" font-size="16" font-family="Arial" font-weight="bold">Legend</text>
+        <rect x="0" y="10" width="20" height="20" fill="#FFB6C1" opacity="0.5"/>
+        <text x="30" y="25" font-size="14" font-family="Arial">Normalization Group</text>
+        <rect x="0" y="40" width="20" height="20" fill="#ADD8E6" opacity="0.3"/>
+        <text x="30" y="55" font-size="14" font-family="Arial">Channel/Feature</text>
+        <rect x="0" y="70" width="20" height="20" fill="none" stroke="#333" stroke-width="1"/>
+        <text x="30" y="85" font-size="14" font-family="Arial">Sample in Batch</text>
+    </g>
+
+    <!-- Batch Normalization -->
+    <g transform="translate(50,120)">
+        <text x="125" y="0" text-anchor="middle" font-size="18" font-family="Arial" font-weight="bold">Batch Normalization</text>
+        <text x="125" y="25" text-anchor="middle" font-size="14" font-family="Arial" fill="#666">Normalize across batch dimension</text>
+
+        <!-- Batch with multiple samples -->
+        <g transform="translate(0,40)">
+            <!-- Sample 1 -->
+            <rect x="0" y="0" width="250" height="60" fill="none" stroke="#333" stroke-width="1"/>
+            <rect x="0" y="0" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="50" y="0" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="100" y="0" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="150" y="0" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="200" y="0" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+
+            <!-- Sample 2 -->
+            <rect x="0" y="70" width="250" height="60" fill="none" stroke="#333" stroke-width="1"/>
+            <rect x="0" y="70" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="50" y="70" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="100" y="70" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="150" y="70" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="200" y="70" width="50" height="60" fill="#ADD8E6" opacity="0.3"/>
+
+            <!-- Normalization highlight -->
+            <rect x="0" y="0" width="50" height="130" fill="#FFB6C1" opacity="0.5"/>
+
+            <!-- Labels -->
+            <text x="-10" y="30" text-anchor="end" font-size="12" font-family="Arial">N</text>
+            <text x="-10" y="100" text-anchor="end" font-size="12" font-family="Arial">C</text>
+            <text x="125" y="150" text-anchor="middle" font-size="12" font-family="Arial">H×W (Spatial Dimensions)</text>
+        </g>
+    </g>
+
+    <!-- Layer Normalization -->
+    <g transform="translate(350,120)">
+        <text x="125" y="0" text-anchor="middle" font-size="18" font-family="Arial" font-weight="bold">Layer Normalization</text>
+        <text x="125" y="25" text-anchor="middle" font-size="14" font-family="Arial" fill="#666">Normalize across channel dimension</text>
+
+        <!-- Single sample -->
+        <g transform="translate(0,40)">
+            <rect x="0" y="0" width="250" height="130" fill="none" stroke="#333" stroke-width="1"/>
+            <!-- Channels -->
+            <rect x="0" y="0" width="50" height="130" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="50" y="0" width="50" height="130" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="100" y="0" width="50" height="130" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="150" y="0" width="50" height="130" fill="#ADD8E6" opacity="0.3"/>
+            <rect x="200" y="0" width="50" height="130" fill="#ADD8E6" opacity="0.3"/>
+
+            <!-- Normalization highlight -->
+            <rect x="0" y="0" width="250" height="65" fill="#FFB6C1" opacity="0.5"/>
+
+            <!-- Labels -->
+            <text x="-10" y="65" text-anchor="end" font-size="12" font-family="Arial">N=1</text>
+            <text x="125" y="150" text-anchor="middle" font-size="12" font-family="Arial">C×H×W (Feature Dimensions)</text>
+        </g>
+    </g>
+
+    <!-- Group Normalization -->
+    <g transform="translate(650,120)">
+        <text x="125" y="0" text-anchor="middle" font-size="18" font-family="Arial" font-weight="bold">Group Normalization</text>
+        <text x="125" y="25" text-anchor="middle" font-size="14" font-family="Arial" fill="#666">Normalize across channel groups</text>
+
+        <!-- Single sample with groups -->
+        <g transform="translate(0,40)">
+            <rect x="0" y="0" width="250" height="130" fill="none" stroke="#333" stroke-width="1"/>
+            <!-- Channel groups -->
+            <g>
+                <rect x="0" y="0" width="100" height="130" fill="#ADD8E6" opacity="0.3"/>
+                <rect x="100" y="0" width="100" height="130" fill="#ADD8E6" opacity="0.3"/>
+                <rect x="200" y="0" width="50" height="130" fill="#ADD8E6" opacity="0.3"/>
+            </g>
+
+            <!-- Group normalization highlights -->
+            <rect x="0" y="0" width="100" height="65" fill="#FFB6C1" opacity="0.5"/>
+            <rect x="100" y="0" width="100" height="65" fill="#FFB6C1" opacity="0.4"/>
+            <rect x="200" y="0" width="50" height="65" fill="#FFB6C1" opacity="0.3"/>
+
+            <!-- Group dividers -->
+            <line x1="100" y1="0" x2="100" y2="130" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="200" y1="0" x2="200" y2="130" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+
+            <!-- Labels -->
+            <text x="-10" y="65" text-anchor="end" font-size="12" font-family="Arial">N=1</text>
+            <text x="50" y="150" text-anchor="middle" font-size="12" font-family="Arial">Group 1</text>
+            <text x="150" y="150" text-anchor="middle" font-size="12" font-family="Arial">Group 2</text>
+            <text x="225" y="150" text-anchor="middle" font-size="12" font-family="Arial">Group 3</text>
+        </g>
+    </g>
+
+    <!-- Key Characteristics -->
+    <g transform="translate(50,400)">
+        <text x="0" y="0" font-size="18" font-family="Arial" font-weight="bold">Key Characteristics:</text>
+
+        <!-- Batch Norm -->
+        <text x="0" y="30" font-size="16" font-family="Arial" font-weight="bold">Batch Normalization:</text>
+        <text x="20" y="50" font-size="14" font-family="Arial">• Normalizes each channel across batch dim</text>
+        <text x="20" y="70" font-size="14" font-family="Arial">• Dependent on batch size</text>
+        <text x="20" y="90" font-size="14" font-family="Arial">• Requires running statistics for inference</text>
+
+        <!-- Layer Norm -->
+        <text x="300" y="30" font-size="16" font-family="Arial" font-weight="bold">Layer Normalization:</text>
+        <text x="320" y="50" font-size="14" font-family="Arial">• Normalizes all channels per sample</text>
+        <text x="320" y="70" font-size="14" font-family="Arial">• Independent of batch size</text>
+        <text x="320" y="90" font-size="14" font-family="Arial">• No running statistics needed</text>
+
+        <!-- Group Norm -->
+        <text x="600" y="30" font-size="16" font-family="Arial" font-weight="bold">Group Normalization:</text>
+        <text x="620" y="50" font-size="14" font-family="Arial">• Normalizes channel groups per sample</text>
+        <text x="620" y="70" font-size="14" font-family="Arial">• Independent of batch size</text>
+        <text x="620" y="90" font-size="14" font-family="Arial">• Compromise between Batch and Layer Norm</text>
+    </g>
+</svg>

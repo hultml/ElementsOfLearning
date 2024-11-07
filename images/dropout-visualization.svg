@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#ffffff"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-size="24" font-family="Arial" fill="#333333">Dropout: Training vs Inference</text>
+    
+    <!-- Training Phase -->
+    <g transform="translate(200,200)">
+        <!-- Layer labels -->
+        <text x="-180" y="0" text-anchor="middle" font-size="16" font-family="Arial">Input</text>
+        <text x="0" y="0" text-anchor="middle" font-size="16" font-family="Arial">Hidden</text>
+        <text x="180" y="0" text-anchor="middle" font-size="16" font-family="Arial">Output</text>
+        
+        <!-- Input Layer Neurons -->
+        <circle cx="-150" cy="-60" r="15" fill="#4CAF50"/>
+        <circle cx="-150" cy="-20" r="15" fill="#4CAF50"/>
+        <circle cx="-150" cy="20" r="15" fill="#4CAF50"/>
+        <circle cx="-150" cy="60" r="15" fill="#4CAF50"/>
+        
+        <!-- Hidden Layer Neurons -->
+        <circle cx="0" cy="-60" r="15" fill="#4CAF50"/>
+        <circle cx="0" cy="-20" r="15" fill="#E0E0E0" stroke="#999" stroke-width="2"/>
+        <circle cx="0" cy="20" r="15" fill="#4CAF50"/>
+        <circle cx="0" cy="60" r="15" fill="#E0E0E0" stroke="#999" stroke-width="2"/>
+        
+        <!-- Output Layer Neurons -->
+        <circle cx="150" cy="-20" r="15" fill="#4CAF50"/>
+        <circle cx="150" cy="20" r="15" fill="#4CAF50"/>
+        
+        <!-- Connections -->
+        <!-- Input to Hidden -->
+        <path d="M-135,-60 L-15,-60" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,-60 L-15,-20" stroke="#999" stroke-width="1.5" opacity="0.3"/>
+        <path d="M-135,-60 L-15,20" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,-20 L-15,-60" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,-20 L-15,20" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,20 L-15,-60" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,20 L-15,20" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,60 L-15,-60" stroke="#999" stroke-width="1.5"/>
+        <path d="M-135,60 L-15,20" stroke="#999" stroke-width="1.5"/>
+        
+        <!-- Hidden to Output -->
+        <path d="M15,-60 L135,-20" stroke="#999" stroke-width="1.5"/>
+        <path d="M15,-60 L135,20" stroke="#999" stroke-width="1.5"/>
+        <path d="M15,20 L135,-20" stroke="#999" stroke-width="1.5"/>
+        <path d="M15,20 L135,20" stroke="#999" stroke-width="1.5"/>
+        
+        <!-- Phase Label -->
+        <text x="0" y="-100" text-anchor="middle" font-size="18" font-family="Arial" fill="#333333">Training Phase (p=0.5)</text>
+    </g>
+    
+    <!-- Dropout Probability Legend -->
+    <g transform="translate(650,50)">
+        <rect x="0" y="0" width="20" height="20" fill="#4CAF50"/>
+        <rect x="0" y="30" width="20" height="20" fill="#E0E0E0" stroke="#999" stroke-width="2"/>
+        <text x="30" y="15" font-size="14" font-family="Arial">Active (p)</text>
+        <text x="30" y="45" font-size="14" font-family="Arial">Dropped (1-p)</text>
+    </g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Background -->
+    <rect width="800" height="500" fill="white"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-size="24" font-family="Arial" font-weight="bold">Layer Normalization: 3D Feature Map View</text>
+    
+    <!-- Definitions -->
+    <defs>
+        <linearGradient id="topGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#A0D8EF;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#7CB9E8;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="rightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#6F8FAF;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#4F7CAC;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="leftGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#89CFF0;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#6CB4EE;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:0.3"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Sample 1 - Multiple Channels -->
+    <g transform="translate(100,100)">
+        <!-- Channel 1 -->
+        <g>
+            <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient)" stroke="#333"/>
+            <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient)" stroke="#333"/>
+            <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient)" stroke="#333"/>
+        </g>
+        
+        <!-- Channel 2 (offset) -->
+        <g transform="translate(140,-20)">
+            <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient)" stroke="#333" opacity="0.8"/>
+            <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient)" stroke="#333" opacity="0.8"/>
+            <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient)" stroke="#333" opacity="0.8"/>
+        </g>
+        
+        <!-- Channel 3 (offset) -->
+        <g transform="translate(280,-40)">
+            <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient)" stroke="#333" opacity="0.6"/>
+            <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient)" stroke="#333" opacity="0.6"/>
+            <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient)" stroke="#333" opacity="0.6"/>
+        </g>
+        
+        <text x="200" y="170" text-anchor="middle" font-size="14" font-family="Arial">Sample 1 (All channels normalized together)</text>
+    </g>
+    
+    <!-- Sample 2 (separate normalization) -->
+    <g transform="translate(100,250)">
+        <!-- Similar structure for Sample 2 -->
+        <g>
+            <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient)" stroke="#333"/>
+            <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient)" stroke="#333"/>
+            <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient)" stroke="#333"/>
+        </g>
+        
+        <g transform="translate(140,-20)">
+            <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient)" stroke="#333" opacity="0.8"/>
+            <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient)" stroke="#333" opacity="0.8"/>
+            <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient)" stroke="#333" opacity="0.8"/>
+        </g>
+        
+        <g transform="translate(280,-40)">
+            <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient)" stroke="#333" opacity="0.6"/>
+            <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient)" stroke="#333" opacity="0.6"/>
+            <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient)" stroke="#333" opacity="0.6"/>
+        </g>
+        
+        <text x="200" y="170" text-anchor="middle" font-size="14" font-family="Arial">Sample 2 (Independent normalization)</text>
+    </g>
+    
+    <!-- Normalization highlights -->
+    <rect x="90" y="80" width="420" height="120" fill="url(#highlightGradient)" stroke="#FF69B4" stroke-width="2" stroke-dasharray="5,5"/>
+    <rect x="90" y="230" width="420" height="120" fill="url(#highlightGradient)" stroke="#FF69B4" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Annotations -->
+    <g transform="translate(550,100)">
+        <text x="0" y="0" font-size="16" font-family="Arial" font-weight="bold">LayerNorm Statistics:</text>
+        <text x="0" y="30" font-size="14" font-family="Arial">• Compute μ, σ per sample</text>
+        <text x="0" y="60" font-size="14" font-family="Arial">• Across all channels (C×H×W)</text>
+        <text x="0" y="90" font-size="14" font-family="Arial">• Each sample normalized independently</text>
+        <text x="0" y="120" font-size="14" font-family="Arial">• Pink highlight shows normalization group</text>
+    </g>
+</svg>

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Background -->
+    <rect width="800" height="500" fill="white"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-size="24" font-family="Arial" font-weight="bold">Group Normalization: 3D Feature Map View</text>
+    <text x="400" y="70" text-anchor="middle" font-size="16" font-family="Arial">(Example: 6 channels divided into 2 groups)</text>
+    
+    <!-- Definitions -->
+    <defs>
+        <!-- Group 1 gradients -->
+        <linearGradient id="topGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#A0D8EF;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#7CB9E8;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="rightGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#6F8FAF;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#4F7CAC;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="leftGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#89CFF0;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#6CB4EE;stop-opacity:0.6"/>
+        </linearGradient>
+        
+        <!-- Group 2 gradients -->
+        <linearGradient id="topGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#98FB98;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#90EE90;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="rightGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3CB371;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#2E8B57;stop-opacity:0.6"/>
+        </linearGradient>
+        <linearGradient id="leftGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#8FBC8F;stop-opacity:0.6"/>
+            <stop offset="100%" style="stop-color:#66CDAA;stop-opacity:0.6"/>
+        </linearGradient>
+        
+        <!-- Highlight gradients -->
+        <linearGradient id="highlightGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:0.3"/>
+        </linearGradient>
+        <linearGradient id="highlightGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#DDA0DD;stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#DA70D6;stop-opacity:0.3"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Sample 1 -->
+    <g transform="translate(50,120)">
+        <!-- Group 1 (Blue channels) -->
+        <g>
+            <!-- Channel 1 -->
+            <g>
+                <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient1)" stroke="#333"/>
+                <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient1)" stroke="#333"/>
+                <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient1)" stroke="#333"/>
+            </g>
+            
+            <!-- Channel 2 -->
+            <g transform="translate(140,-20)">
+                <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient1)" stroke="#333"/>
+                <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient1)" stroke="#333"/>
+                <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient1)" stroke="#333"/>
+            </g>
+            
+            <!-- Channel 3 -->
+            <g transform="translate(280,-40)">
+                <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient1)" stroke="#333"/>
+                <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient1)" stroke="#333"/>
+                <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient1)" stroke="#333"/>
+            </g>
+        </g>
+        
+        <!-- Group 2 (Green channels) -->
+        <g transform="translate(420,-60)">
+            <!-- Channel 4 -->
+            <g>
+                <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient2)" stroke="#333"/>
+                <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient2)" stroke="#333"/>
+                <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient2)" stroke="#333"/>
+            </g>
+            
+            <!-- Channel 5 -->
+            <g transform="translate(140,-20)">
+                <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient2)" stroke="#333"/>
+                <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient2)" stroke="#333"/>
+                <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient2)" stroke="#333"/>
+            </g>
+            
+            <!-- Channel 6 -->
+            <g transform="translate(280,-40)">
+                <path d="M0 50 L60 20 L120 50 L60 80 Z" fill="url(#topGradient2)" stroke="#333"/>
+                <path d="M120 50 L60 80 L60 140 L120 110 Z" fill="url(#rightGradient2)" stroke="#333"/>
+                <path d="M0 50 L60 80 L60 140 L0 110 Z" fill="url(#leftGradient2)" stroke="#333"/>
+            </g>
+        </g>
+        
+        <!-- Group separation line -->
+        <line x1="400" y1="0" x2="400" y2="150" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+        
+        <!-- Group labels -->
+        <text x="200" y="170" text-anchor="middle" font-size="14" font-family="Arial">Group 1</text>
+        <text x="600" y="170" text-anchor="middle" font-size="14" font-family="Arial">Group 2</text>
+    </g>
+    
+    <!-- Normalization highlights -->
+    <rect x="40" y="100" width="350" height="120" fill="url(#highlightGradient1)" stroke="#FF69B4" stroke-width="2" stroke-dasharray="5,5"/>
+    <rect x="460" y="40" width="350" height="120" fill="url(#highlightGradient2)" stroke="#DA70D6" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Annotations -->
+    <g transform="translate(50,300)">
+        <text x="0" y="0" font-size="16" font-family="Arial" font-weight="bold">GroupNorm Statistics:</text>
+        <text x="0" y="30" font-size="14" font-family="Arial">• Channels divided into groups (G=2 in this example)</text>
+        <text x="0" y="60" font-size="14" font-family="Arial">• Each group normalized independently</text>
+        <text x="0" y="90" font-size="14" font-family="Arial">• Compute μ, σ per group within each sample</text>
+        <text x="0" y="120" font-size="14" font-family="Arial">• Different colored highlights show separate normalization groups</text>
+        
+        <!-- Common configurations -->
+        <text x="400" y="30" font-size="14" font-family="Arial">Common configurations:</text>
+        <text x="400" y="60" font-size="14" font-family="Arial">• G=32 (default)</text>
+        <text x="400" y="90" font-size="14" font-family="Arial">• G=1 → LayerNorm</text>
+        <text x="400" y="120" font-size="14" font-family="Arial">• G=C → InstanceNorm</text>
+    </g>
+</svg>
